@@ -1,5 +1,17 @@
 import Image from "next/image";
 
+const services = [
+  { name: "Rubber Base", duration: 90, price: 10000, image: "/service-rubber-base.jpg" },
+  { name: "Polygel", duration: 180, price: 18000, image: "/service-polygel.jpg" },
+  { name: "Pedicure Spa", duration: 180, price: 20000, image: "/service-pedicure-spa.jpg" },
+  { name: "Pedicure Ruso", duration: 180, price: 10000, image: "/service-pedicure-ruso.jpg" },
+  { name: "Gel X", duration: 90, price: 15000, image: "/service-gel-x.jpg" },
+  { name: "Gel de calcio sobre uña natural", duration: 120, price: 12000, image: "/service-gel-calcio-natural.jpg" },
+  { name: "Gel de calcio + extensión de uñas", duration: 120, price: 14000, image: "/service-gel-calcio-extension.jpg" },
+  { name: "Exfoliación e hidratación en manos", duration: 120, price: 10000, image: "/service-exfoliacion-manos.jpg" },
+  { name: "Esmaltado semipermanente sobre uña natural", duration: 60, price: 8000, image: "/service-esmaltado-semipermanente.jpg" },
+];
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-primary text-text-primary">
@@ -54,32 +66,32 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Placeholder for Services Section */}
+      {/* Services Section */}
       <section id="services" className="container mx-auto px-4 py-16 md:py-24 bg-secondary">
         <h2 className="text-4xl font-gilda-display text-center mb-12">Nuestros Servicios</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* Service Card Placeholder */}
-          <div className="bg-white rounded-lg shadow-md overflow-hidden">
-            <Image
-              src="/service-placeholder.jpg" // Placeholder for service image
-              alt="Servicio de uñas"
-              width={400}
-              height={250}
-              objectFit="cover"
-              className="w-full h-48"
-            />
-            <div className="p-6">
-              <h3 className="text-xl font-gilda-display mb-2">Nombre del Servicio</h3>
-              <p className="text-gray-600 mb-4 font-montserrat">Descripción corta del servicio.</p>
-              <div className="flex justify-between items-center">
-                <span className="text-lg font-bold text-accent font-montserrat">₡10.000</span>
-                <button className="bg-accent text-white px-4 py-2 rounded-full text-sm font-montserrat hover:bg-pink-700 transition-colors">
-                  Reservar
-                </button>
+          {services.map((service) => (
+            <div key={service.name} className="bg-white rounded-lg shadow-md overflow-hidden">
+              <Image
+                src={service.image || "/service-placeholder.jpg"} // Placeholder for service image
+                alt={service.name}
+                width={400}
+                height={250}
+                objectFit="cover"
+                className="w-full h-48"
+              />
+              <div className="p-6">
+                <h3 className="text-xl font-gilda-display mb-2">{service.name}</h3>
+                <p className="text-gray-600 mb-4 font-montserrat text-sm">{service.duration} min</p>
+                <div className="flex justify-between items-center">
+                  <span className="text-lg font-bold text-accent font-montserrat">₡{service.price.toLocaleString('es-CR')}</span>
+                  <button className="bg-accent text-white px-4 py-2 rounded-full text-sm font-montserrat hover:bg-pink-700 transition-colors">
+                    Reservar
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-          {/* Repeat service card placeholders as needed */}
+          ))}
         </div>
       </section>
 
