@@ -1,6 +1,5 @@
-@import "tailwindcss";
-
 @import url('https://fonts.googleapis.com/css2?family=Gilda+Display&family=Montserrat:wght@400;500;700&family=Oswald:wght@400;700&family=Shelley+Script&display=swap');
+@import "tailwindcss";
 
 :root {
   --background-primary: #FAF6F0;
