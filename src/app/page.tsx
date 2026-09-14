@@ -24,7 +24,7 @@ export default function Home() {
             <a href="#about" className="hover:text-accent font-montserrat">Sobre nosotras</a>
             <a href="#services" className="hover:text-accent font-montserrat">Servicios</a>
           </div>
-          <button className="bg-accent text-white px-6 py-2 rounded-full font-montserrat hover:bg-pink-700 transition-colors">
+          <button className="bg-accent text-white px-6 py-2 rounded-full font-montserrat hover:bg-pink-700 transition-colors" onClick={() => window.location.href = '/book'}>
             Reservar cita
           </button>
         </div>
@@ -47,7 +47,7 @@ export default function Home() {
           <p className="mt-4 text-xl md:text-2xl font-montserrat">
             Servicio profesional en manicura y pedicura.
           </p>
-          <button className="mt-8 bg-accent text-white px-8 py-3 rounded-full text-lg font-montserrat hover:bg-pink-700 transition-colors">
+          <button className="mt-8 bg-accent text-white px-8 py-3 rounded-full text-lg font-montserrat hover:bg-pink-700 transition-colors" onClick={() => window.location.href = '/book'}>
             Reservar cita
           </button>
         </div>
@@ -85,7 +85,7 @@ export default function Home() {
                 <p className="text-gray-600 mb-4 font-montserrat text-sm">{service.duration} min</p>
                 <div className="flex justify-between items-center">
                   <span className="text-lg font-bold text-accent font-montserrat">₡{service.price.toLocaleString('es-CR')}</span>
-                  <button className="bg-accent text-white px-4 py-2 rounded-full text-sm font-montserrat hover:bg-pink-700 transition-colors">
+                  <button className="bg-accent text-white px-4 py-2 rounded-full text-sm font-montserrat hover:bg-pink-700 transition-colors" onClick={() => window.location.href = '/book?service=' + service.name}>
                     Reservar
                   </button>
                 </div>
