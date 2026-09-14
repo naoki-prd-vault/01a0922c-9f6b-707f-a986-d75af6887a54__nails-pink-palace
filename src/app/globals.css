@@ -1,26 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Gilda+Display&family=Montserrat:wght@400;500;700&family=Oswald:wght@400;700&family=Shelley+Script&display=swap');
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  --background-primary: #FAF6F0;
+  --background-secondary: #FAF6F1;
+  --accent-color: #E66C7D;
+  --text-primary: #2B2B2B;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-shelley-script: 'Shelley Script', cursive;
+  --font-gilda-display: 'Gilda Display', serif;
+  --font-oswald: 'Oswald', sans-serif; /* Placeholder for Perandory Condensed */
+  --font-montserrat: 'Montserrat', sans-serif; /* Placeholder for Gotham */
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--background-primary);
+  color: var(--text-primary);
+  font-family: var(--font-montserrat);
 }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-gilda-display);
+}
+
+/* Specific styles for Perandory Condensed (using Oswald as placeholder) */
+.font-perandory-condensed {
+  font-family: var(--font-oswald);
+  text-transform: uppercase;
+}
+
+/* Specific styles for Shelley Script (for logo) */
+.font-shelley-script {
+  font-family: var(--font-shelley-script);
+}
+
+/* Tailwind CSS overrides for custom colors */
+.bg-primary { background-color: var(--background-primary); }
+.bg-secondary { background-color: var(--background-secondary); }
+.bg-accent { background-color: var(--accent-color); }
+.text-primary { color: var(--text-primary); }
+.text-accent { color: var(--accent-color); }
+.border-accent { border-color: var(--accent-color); }
+
